@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class TeleportColliders : MonoBehaviour
 {
+    float yPos = 0.32f;
+    float xPos = 7.6f;
     private void OnTriggerEnter2D(Collider2D collider)
     {
         Vector3 newPosition = Vector3.zero;
         if(collider.tag == "LeftCollider")
         {
-            newPosition = new Vector3(7.6f, 0.32f, 0);
+            newPosition = new Vector3(xPos, yPos, 0);
             GetComponent<Transform>().position = newPosition;
         }
 
         if (collider.tag == "RightCollider")
         {
-            newPosition = new Vector3(-7.6f, 0.32f, 0);
+            newPosition = new Vector3(-xPos, yPos, 0);
             GetComponent<Transform>().position = newPosition;
         }
     }
